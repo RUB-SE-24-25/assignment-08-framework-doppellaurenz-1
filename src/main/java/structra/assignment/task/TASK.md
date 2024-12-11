@@ -13,7 +13,7 @@ as a reference, but you dont have to.
 
 - **Resources**: Use the following API key if you want to use `Mimic.java` (Our mock implementation of
   `ChatGPTModel.java`)
-    - `structra-1343abnc-dGhpcyBpcyBub3Qgb3VyIGFwaSBrZXksIG5pY2UgdHJ5IHRobyA6KQ==`
+- `structra-1343abnc-dghpcybpcybub3qgb3vyigfwasbrzxksig5py2ugdhj5ihrobya6kq==`
 
 ## b) **GUI Implementation**
 
