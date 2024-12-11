@@ -48,7 +48,7 @@ public class KeyProviderChatGPT implements KeyProvider{
 
   private String key = "structra-1343abnc-dghpcybpcybub3qgb3vyigfwasbrzxksig5py2ugdhj5ihrobya6kq==";
 
-  public getApiKey(){
+  public String getApiKey(){
     return this.key;
   }
 }
