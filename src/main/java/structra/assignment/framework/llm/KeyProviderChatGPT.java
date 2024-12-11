@@ -1,4 +1,4 @@
-package structra.assignment.framework.llm;
+package structra.assignment.framework.llm; //package
 
 import structra.assignment.framework.llm.KeyProvider;
 
