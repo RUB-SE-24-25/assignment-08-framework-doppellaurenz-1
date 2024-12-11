@@ -1,0 +1,45 @@
+Index: src/main/java/structra/assignment/framework/llm/KeyProvider.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>/*\r\n * MIT License\r\n *\r\n * Copyright (c) 2024 Riko Torun, Artur Rausch, Lennart Köhler, Moritz Wiedemann, Tim Stöcker, Souren Ishkhanian\r\n *\r\n * Permission is hereby granted, free of charge, to any person obtaining a copy\r\n * of this software and associated documentation files (the \"Software\"), to deal\r\n * in the Software without restriction, including without limitation the rights\r\n * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell\r\n * copies of the Software, and to permit persons to whom the Software is\r\n * furnished to do so, subject to the following conditions:\r\n *\r\n * The above copyright notice and this permission notice shall be included in all\r\n * copies or substantial portions of the Software.\r\n *\r\n * THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\r\n * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\r\n * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\r\n * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\r\n * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\r\n * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\r\n * SOFTWARE.\r\n *\r\n */\r\n\r\n package structra.assignment.framework.llm;\r\n\r\n/**\r\n * Provides a mechanism to securely retrieve and manage API keys for external services.\r\n *\r\n * <p>Serves as a foundational interface for interacting with APIs requiring authentication.</p>\r\n * \r\n * @author Moritz Wiedemann\r\n * @author Riko Torun\r\n */\r\npublic interface KeyProvider {\r\n\r\n    /**\r\n     * Retrieves and decrypts the API key.\r\n     *\r\n     * @return The decrypted API key as a string.\r\n     * @throws RuntimeException If an error occurs during retrieval or decryption.\r\n     */\r\n    String getApiKey();\r\n}\r\n\r\npublic class KeyProviderChatGPT implements KeyProvider{\r\n\r\n  private String key = \"structra-1343abnc-dghpcybpcybub3qgb3vyigfwasbrzxksig5py2ugdhj5ihrobya6kq==\";\r\n\r\n  public getApiKey(){\r\n    return this.key;\r\n  }\r\n}\r\n\r\n\r\n\r\n\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/structra/assignment/framework/llm/KeyProvider.java b/src/main/java/structra/assignment/framework/llm/KeyProvider.java
+--- a/src/main/java/structra/assignment/framework/llm/KeyProvider.java	(revision a104a032da2f68c25a6d532cba62de1f6250f801)
++++ b/src/main/java/structra/assignment/framework/llm/KeyProvider.java	(date 1733924087892)
+@@ -35,24 +35,26 @@
+  */
+ public interface KeyProvider {
+ 
++
+     /**
+      * Retrieves and decrypts the API key.
+      *
+      * @return The decrypted API key as a string.
+      * @throws RuntimeException If an error occurs during retrieval or decryption.
+      */
++
+     String getApiKey();
+-}
++
+ 
+-public class KeyProviderChatGPT implements KeyProvider{
++    public class KeyProviderChatGPT implements KeyProvider {
+ 
+-  private String key = "structra-1343abnc-dghpcybpcybub3qgb3vyigfwasbrzxksig5py2ugdhj5ihrobya6kq==";
++        private String key = "structra-1343abnc-dghpcybpcybub3qgb3vyigfwasbrzxksig5py2ugdhj5ihrobya6kq==";
+ 
+-  public getApiKey(){
+-    return this.key;
+-  }
+-}
++        public getApiKey() {
++            return this.key;
++        }
++    }
+ 
+-
++}
+ 
+ 
