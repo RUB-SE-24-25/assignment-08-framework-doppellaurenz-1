@@ -1,0 +1,35 @@
+Index: src/main/java/structra/assignment/framework/llm/KeyProviderChatGPT.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>public class KeyProviderChatGPT implements KeyProvider{\n  private String key = \"structra-1343abnc-dghpcybpcybub3qgb3vyigfwasbrzxksig5py2ugdhj5ihrobya6kq==\";\n\n  public String getApiKey(){\n    return this.key;\n  }\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/structra/assignment/framework/llm/KeyProviderChatGPT.java b/src/main/java/structra/assignment/framework/llm/KeyProviderChatGPT.java
+--- a/src/main/java/structra/assignment/framework/llm/KeyProviderChatGPT.java	(revision 942294d9deb009fab04b49f4ffb39839baea2384)
++++ b/src/main/java/structra/assignment/framework/llm/KeyProviderChatGPT.java	(date 1733924845611)
+@@ -1,3 +1,5 @@
++package structra.assignment.framework.llm;
++
+ public class KeyProviderChatGPT implements KeyProvider{
+   private String key = "structra-1343abnc-dghpcybpcybub3qgb3vyigfwasbrzxksig5py2ugdhj5ihrobya6kq==";
+ 
+Index: src/main/java/structra/assignment/task/TASK.md
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+># \uD83C\uDF1F **Quiz App Development Plan**\n\n## ⚠\uFE0F Implementation details ⚠\uFE0F\n\nYour implementation should be placed in the package `src/main/java/structra/assignment/task/impl`. You may use Example.java\nas a reference, but you dont have to.\n\n## a). **Plugin Creation**\n\n- **Objective**: Create a class that implements the `KeyProvider.java` interface. Its purpose is to allow for simple\n  retrieval of an API key via the `getApiKey` method. The API key can be the one required by `Mimic.java` or a genuine\n  one used for the OpenAI chat completions endpoint.\n\n- **Resources**: Use the following API key if you want to use `Mimic.java` (Our mock implementation of\n  `ChatGPTModel.java`)\n    - `structra-1343abnc-dGhpcyBpcyBub3Qgb3VyIGFwaSBrZXksIG5pY2UgdHJ5IHRobyA6KQ==`\n\n## b) **GUI Implementation**\n\n- **Objective**: Develop an interactive Graphical User Interface (GUI) to display questions dynamically, powered by the\n  `ModelQuestionProvider.java`.\n\n- **Technologies**: **Swing** (Java GUI toolkit). We provide example code in Example.java. You can also reference\n  the [official documentation](https://docs.oracle.com/javase/tutorial/uiswing/) for guidance, but here the point is not to become a GUI developer, just to practice using a framework based on example code.\n\n- **Components to Include**:\n    - **Main Window**: The main container (e.g `JFrame`) of all other elements.\n    - **Next Question Button**: A button that, when pressed, retrieves and displays the next question using\n      `ModelQuestionProvider.next()`.\n    - **Question Display Area**: A `TextArea` or `Label` that will display the question text. This should account for\n      different question types (e.g. multiple-choice questions).\n\n- **Non-blocking Design**:\n    - Ensure the GUI remains responsive while tasks are being processed (Properly use `CompletableFuture`).\n\n- **Handling Different Question Types**:\n    - Display the question properly formatted in non JSON form\n    - Example: <p>\n      ![GUI Example](/src/main/resources/GUI_example.png) </p>\n\n## c). **Multiple Choice Formatter**\n\n- **Objective**: Add your implementation to generate and format multiple-choice questions, using the model\n  `ChatGPTModel.java` (or its mock, `Mimic.java`).\n\n- **Steps**:\n    - Create a concrete implementation for `QuestionGenerationTarget.java` and `SystemContext.java`.\n    - Use the above classes to process inputs from the chosen model and generate instances of\n      `MultiCheckboxQuestion.java` using `Quizzmaker.java`.\n        - Refer to `OpenQuestionTarget.java` and `OpenQuestionContext.java` for guidance [^1].\n    - Format the question and answer options to be displayed in the GUI.\n\n## d) **Refactoring**\n\n- **Objective**: Propose a refactoring of the `QuestionTypes.java` enumeration, making it more modular, maintainable, and\n  extensible.\n\n- **Steps**:\n    - Analyze the current `QuestionTypes.java`.\n    - Create a UML [^2] diagram that outlines how to improve `QuestionTypes.java`.\n\n## e). **Documentation Improvements**\n\n- **Objective**: Suggest improvements for any documentation inside `structra/assignment/framework`. This includes\n  docstrings as well, as UML diagrams (if you feel like creating one).\n\n- **Steps**:\n    - Analyze the current documentation.\n    - Suggest changes by adding documentation inside the respective files / packages.\n    - Write a *short* text justifying your changes.\n\n## f). **Reflection**\n\n- **Objective**: Recap the lectures and check if the framework adheres to the principles and suggestions for architecture and implementation.\n\n- **Steps**:\n    - Have a look at the lecture material again.\n    - Familiarize yourself with the design patterns used and design choices made.\n    - Implement one improvement in the code and document it.\n    - If you cannot come up with an improvement to the framework code, discuss whether and how your application code adheres to the SOLID principles (based on one example) and whether a design pattern from the lecture could be used..\n\n[^1]: Additional documentation can be found in `structra/assignment/framework/docs`.\n[^2]: PlantUML\nrenderer [PlantUML](https://www.plantuml.com/plantuml/duml/SoWkIImgAStDuNBAJrBGjLDmpCbCJbMmKiX8pSd9vt98pKi1IW80).\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/structra/assignment/task/TASK.md b/src/main/java/structra/assignment/task/TASK.md
+--- a/src/main/java/structra/assignment/task/TASK.md	(revision 942294d9deb009fab04b49f4ffb39839baea2384)
++++ b/src/main/java/structra/assignment/task/TASK.md	(date 1733924960232)
+@@ -13,7 +13,7 @@
+ 
+ - **Resources**: Use the following API key if you want to use `Mimic.java` (Our mock implementation of
+   `ChatGPTModel.java`)
+-    - `structra-1343abnc-dGhpcyBpcyBub3Qgb3VyIGFwaSBrZXksIG5pY2UgdHJ5IHRobyA6KQ==`
++- `structra-1343abnc-dghpcybpcybub3qgb3vyigfwasbrzxksig5py2ugdhj5ihrobya6kq==`
+ 
+ ## b) **GUI Implementation**
+ 
