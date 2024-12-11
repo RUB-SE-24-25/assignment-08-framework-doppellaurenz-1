@@ -1,4 +1,4 @@
-# 🌟 **Quiz App Development Plan**
+  # 🌟 **Quiz App Development Plan**
 
 ## ⚠️ Implementation details ⚠️
 
