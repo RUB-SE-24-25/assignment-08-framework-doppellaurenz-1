@@ -1,4 +1,4 @@
-package structra.assignment.framework.llm;
+package structra.assignment.task.de.rub.client;
 
 import structra.assignment.framework.llm.KeyProvider;
 
